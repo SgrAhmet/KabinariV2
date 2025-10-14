@@ -1,12 +1,33 @@
 import React, { useState, useEffect } from "react";
 import Row from "./Row";
+import DownloadExcel from "./DownloadExcel";
 
 const DynamicForm = () => {
   const [rows, setRows] = useState([
-    { name: "", surname: "", phone: "", email: "", address: ""  , yon: "" , tekmelik: false},
+    {
+      kat: "",
+      tip: "",
+      mahalNo: "",
+      mahal: "",
+      en: "",
+      boy: "",
+      dk: "",
+      kanat: "",
+      kasa: "",
+      yon: "",
+      barel: "",
+      kilit: "",
+      cumba: "",
+      kol: "",
+      tekmelik: false,
+      itmelik: false,
+      menfez: false,
+      hidrolik: false,
+      lumboz: false,
+      yangınaD: false,
+    },
   ]);
 
-  
   useEffect(() => {
     const localData = localStorage.getItem("localData");
     if (localData) {
@@ -17,7 +38,28 @@ const DynamicForm = () => {
   const addRow = () => {
     setRows([
       ...rows,
-      { name: "", surname: "", phone: "", email: "", address: "" , yon: "" , tekmelik: false },
+      {
+        kat: "",
+        tip: "",
+        mahalNo: "",
+        mahal: "",
+        en: "",
+        boy: "",
+        dk: "",
+        kanat: "",
+        kasa: "",
+        yon: "",
+        barel: "",
+        kilit: "",
+        cumba: "",
+        kol: "",
+        tekmelik: false,
+        itmelik: false,
+        menfez: false,
+        hidrolik: false,
+        lumboz: false,
+        yangınaD: false,
+      },
     ]);
   };
   const deleteRow = (index) => {
@@ -29,19 +71,53 @@ const DynamicForm = () => {
       setRows([
         ...rows,
         {
-          name: rows[rows.length - 1].name,
-          surname: rows[rows.length - 1].surname,
-          phone: rows[rows.length - 1].phone,
-          email: rows[rows.length - 1].email,
-          address: rows[rows.length - 1].address,
+          kat: rows[rows.length - 1].kat,
+          tip: rows[rows.length - 1].tip,
+          mahalNo: rows[rows.length - 1].mahalNo,
+          mahal: rows[rows.length - 1].mahal,
+          en: rows[rows.length - 1].en,
+          boy: rows[rows.length - 1].boy,
+          dk: rows[rows.length - 1].dk,
+          kanat: rows[rows.length - 1].kanat,
+          kasa: rows[rows.length - 1].kasa,
           yon: rows[rows.length - 1].yon,
+          barel: rows[rows.length - 1].barel,
+          kilit: rows[rows.length - 1].kilit,
+          cumba: rows[rows.length - 1].cumba,
+          kol: rows[rows.length - 1].kol,
           tekmelik: rows[rows.length - 1].tekmelik,
+          itmelik: rows[rows.length - 1].itmelik,
+          menfez: rows[rows.length - 1].menfez,
+          hidrolik: rows[rows.length - 1].hidrolik,
+          lumboz: rows[rows.length - 1].lumboz,
+          yangınaD: rows[rows.length - 1].yangınaD,
         },
       ]);
-    }else{
+    } else {
       setRows([
         ...rows,
-        { name: "", surname: "", phone: "", email: "", address: ""  , yon: "" , tekmelik: false },
+        {
+          kat: "",
+          tip: "",
+          mahalNo: "",
+          mahal: "",
+          en: "",
+          boy: "",
+          dk: "",
+          kanat: "",
+          kasa: "",
+          yon: "",
+          barel: "",
+          kilit: "",
+          cumba: "",
+          kol: "",
+          tekmelik: false,
+          itmelik: false,
+          menfez: false,
+          hidrolik: false,
+          lumboz: false,
+          yangınaD: false,
+        },
       ]);
     }
   };
@@ -55,6 +131,11 @@ const DynamicForm = () => {
     localStorage.setItem("localData", JSON.stringify(rows));
   }, [rows]);
 
+
+  const handleExcel = () => {
+    DownloadExcel(rows, "Müsteri Ismi");
+  };
+
   return (
     <div>
       {rows.map((row, index) => (
@@ -62,13 +143,26 @@ const DynamicForm = () => {
           rows={rows}
           setRows={setRows}
           index={index}
-          name={row.name}
-          surname={row.surname}
-          phone={row.phone}
-          email={row.email}
-          address={row.address}
+          kat={row.kat}
+          tip={row.tip}
+          mahalNo={row.mahalNo}
+          mahal={row.mahal}
+          en={row.en}
+          boy={row.boy}
+          dk={row.dk}
+          kanat={row.kanat}
+          kasa={row.kasa}
           yon={row.yon}
+          barel={row.barel}
+          kilit={row.kilit}
+          cumba={row.cumba}
+          kol={row.kol}
           tekmelik={row.tekmelik}
+          itmelik={row.itmelik}
+          menfez={row.menfez}
+          hidrolik={row.hidrolik}
+          lumboz={row.lumboz}
+          yangınaD={row.yangınaD}
           key={index}
           deleteRow={deleteRow}
         />
@@ -94,6 +188,13 @@ const DynamicForm = () => {
         onClick={handleSubmit}
       >
         Submit
+      </button>
+      <button
+        type="button"
+        className="bg-blue-500 border border-blue-800 text-white px-4 py-2 rounded hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 cursor-pointer"
+        onClick={handleExcel}
+      >
+        Excel
       </button>
     </div>
   );

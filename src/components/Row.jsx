@@ -1,59 +1,323 @@
 import React from "react";
 
-const Row = ({ deleteRow, name, surname, phone, email, address, index,setRows,rows,yon,tekmelik }) => {
+const Row = ({
+  kat,
+  tip,
+  mahalNo,
+  mahal,
+  en,
+  boy,
+  dk,
+  kanat,
+  kasa,
+  barel,
+  kilit,
+  cumba,
+  kol,
+  index,
+  setRows,
+  rows,
+  yon,
+  itmelik,
+  menfez,
+  hidrolik,
+  lumboz,
+  yangınaD,
+  tekmelik,
+  deleteRow,
+}) => {
   return (
     <div className="flex gap-2">
       <input
-        placeholder="Ad"
+        placeholder="Kat"
         type="text"
-        className="border border-blue-800 rounded px-4 py-2"
-        value={name}
-        onChange={(e) => setRows(rows.map((row, i) => i === index ? {...row, name: e.target.value} : row))}
+        className="border border-blue-800 rounded px-4 py-2 w-20"
+        value={kat}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, kat: e.target.value } : row
+            )
+          )
+        }
       />
       <input
-        placeholder="Soyad"
+        placeholder="Tip"
         type="text"
-        className="border border-blue-800 rounded px-4 py-2"
-        value={surname}
-        onChange={(e) => setRows(rows.map((row, i) => i === index ? {...row, surname: e.target.value} : row))}
+        className="border border-blue-800 rounded px-4 py-2 w-20"
+        value={tip}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, tip: e.target.value } : row
+            )
+          )
+        }
       />
       <input
-        placeholder="Telefon"
+        placeholder="Mahal No"
         type="text"
-        className="border border-blue-800 rounded px-4 py-2"
-        value={phone}
-        onChange={(e) => setRows(rows.map((row, i) => i === index ? {...row, phone: e.target.value} : row))}    
-          />    
-      <input
-        placeholder="E-posta"
-        type="text"
-        className="border border-blue-800 rounded px-4 py-2"
-        value={email}
-        onChange={(e) => setRows(rows.map((row, i) => i === index ? {...row, email: e.target.value} : row))}
+        className="border border-blue-800 rounded px-4 py-2 w-20"
+        value={mahalNo}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, mahalNo: e.target.value } : row
+            )
+          )
+        }
       />
       <input
-        placeholder="Adres"
+        placeholder="Mahal"
         type="text"
-        className="border border-blue-800 rounded px-4 py-2"
-        value={address}
-        onChange={(e) => setRows(rows.map((row, i) => i === index ? {...row, address: e.target.value} : row))}
+        className="border border-blue-800 rounded px-4 py-2 w-20"
+        value={mahal}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, mahal: e.target.value } : row
+            )
+          )
+        }
       />
 
-      {/* <input
-        placeholder="Yön"
-        type="select"
-        className="border border-blue-800 rounded px-4 py-2"
+      <input
+        placeholder="En"
+        type="text"
+        className="border border-blue-800 rounded px-4 py-2 w-20"
+        value={en}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, en: e.target.value } : row
+            )
+          )
+        }
+      />
+
+      <input
+        placeholder="Boy"
+        type="text"
+        className="border border-blue-800 rounded px-4 py-2 w-20"
+        value={boy}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, boy: e.target.value } : row
+            )
+          )
+        }
+      />
+
+      <input
+        placeholder="DK"
+        type="text"
+        className="border border-blue-800 rounded px-4 py-2 w-20"
+        value={dk}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, dk: e.target.value } : row
+            )
+          )
+        }
+      />
+
+      <select
+        name="yon"
+        id=""
+        className="border border-blue-800 rounded px-4 py-2 w-20"
         value={yon}
-        onChange={(e) => setRows(rows.map((row, i) => i === index ? {...row, yon: e.target.value} : row))}
-      /> */}
-      <select name="yon" id="" value={yon} onChange={(e) => setRows(rows.map((row, i) => i === index ? {...row, yon: e.target.value} : row))}>
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, yon: e.target.value } : row
+            )
+          )
+        }
+      >
         <option value="">Yön</option>
         <option value="Sağ">Sağ</option>
         <option value="Sol">Sol</option>
       </select>
 
-      <input title="Tekmelik" type="checkbox" checked={tekmelik} onChange={(e) => setRows(rows.map((row, i) => i === index ? {...row, tekmelik: e.target.checked} : row))} />
-      <button type="button" onClick={() => deleteRow(index)} className="bg-red-500 border border-red-800 text-white px-4 py-2 rounded hover:bg-red-600 hover:border-red-600 transition-all duration-300 cursor-pointer">
+      <input
+        placeholder="Kanat"
+        type="text"
+        className="border border-blue-800 rounded px-4 py-2 w-20"
+        value={kanat}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, kanat: e.target.value } : row
+            )
+          )
+        }
+      />
+      <input
+        placeholder="Kasa"
+        type="text"
+        className="border border-blue-800 rounded px-4 py-2 w-20"
+        value={kasa}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, kasa: e.target.value } : row
+            )
+          )
+        }
+      />
+
+      <select
+        name="barel"
+        id=""
+        className="border border-blue-800 rounded px-4 py-2 w-20"
+        value={barel}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, barel: e.target.value } : row
+            )
+          )
+        }
+      >
+        <option value="">Barel</option>
+        <option value="?1">?1</option>
+        <option value="?2">?2</option>
+      </select>
+
+      <input
+        type="text"
+        placeholder="Kilit"
+        className="border border-blue-800 rounded px-4 py-2 w-20"
+        value={kilit}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, kilit: e.target.value } : row
+            )
+          )
+        }
+      />
+
+      <select
+        name="cumba"
+        id=""
+        className="border border-blue-800 rounded px-4 py-2 w-20"
+        value={cumba}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, cumba: e.target.value } : row
+            )
+          )
+        }
+      >
+        <option value="">Cumba</option>
+        <option value="PVC">PVC</option>
+        <option value="U">U</option>
+      </select>
+
+
+      <select
+        name="kol"
+        id=""
+        className="border border-blue-800 rounded px-4 py-2 w-20"
+        value={kol}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, kol: e.target.value } : row
+            )
+          )
+        }
+      >
+        <option value="">Kol</option>
+        <option value="Baston">Baston</option>
+        <option value="Boru">Boru</option>
+      </select>
+
+      <input
+        title="Tekmelik"
+        type="checkbox"
+        checked={tekmelik}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, tekmelik: e.target.checked } : row
+            )
+          )
+        }
+      />
+  <input
+        title="Itmelik"
+        type="checkbox"
+        checked={itmelik}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, itmelik: e.target.checked } : row
+            )
+          )
+        }
+      />
+  <input
+        title="Menfez"
+        type="checkbox"
+        checked={menfez}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, menfez: e.target.checked } : row
+            )
+          )
+        }
+      />
+
+<input
+        title="Hidrolik"
+        type="checkbox"
+        checked={hidrolik}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, hidrolik: e.target.checked } : row
+            )
+          )
+        }
+      />
+
+
+<input
+        title="Lumboz"
+        type="checkbox"
+        checked={lumboz}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, lumboz: e.target.checked } : row
+            )
+          )
+        }
+      />
+
+<input
+        title="Yangına D"
+        type="checkbox"
+        checked={yangınaD}
+        onChange={(e) =>
+          setRows(
+            rows.map((row, i) =>
+              i === index ? { ...row, yangınaD: e.target.checked } : row
+            )
+          )
+        }
+      />
+      <button
+        type="button"
+        onClick={() => deleteRow(index)}
+        className="bg-red-500 border border-red-800 text-white px-4 py-2 rounded hover:bg-red-600 hover:border-red-600 transition-all duration-300 cursor-pointer"
+      >
         X
       </button>
     </div>
