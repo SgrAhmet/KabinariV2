@@ -1,0 +1,296 @@
+/* Overlay - Sidebar açıkken arka planı karartır */
+.mySideBar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+}
+
+.mySideBar-overlay-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Sidebar Container */
+.mySideBar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.mySideBar-open {
+  transform: translateX(0);
+}
+
+/* Header Section */
+.mySideBar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  border-bottom: 2px solid #e9ecef;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 80px;
+}
+
+.mySideBar-logo-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mySideBar-logo {
+  max-width: 160px;
+  max-height: 50px;
+  object-fit: contain;
+  display: block;
+}
+
+.mySideBar-logo-fallback {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.mySideBar-logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.mySideBar-close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.mySideBar-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.mySideBar-close-btn:active {
+  transform: scale(0.95);
+}
+
+/* Menu Container - Scrollable */
+.mySideBar-menu-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1rem 0;
+}
+
+/* Custom Scrollbar */
+.mySideBar-menu-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mySideBar-menu-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mySideBar-menu-container::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+.mySideBar-menu-container::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Navigation */
+.mySideBar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0 0.75rem;
+}
+
+/* Menu Item */
+.mySideBar-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #2d3748;
+  font-size: 0.95rem;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+}
+
+.mySideBar-menu-item:hover {
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  transform: translateX(4px);
+}
+
+.mySideBar-menu-item:active {
+  transform: translateX(4px) scale(0.98);
+}
+
+.mySideBar-menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #667eea;
+  font-size: 1.25rem;
+  width: 24px;
+  height: 24px;
+}
+
+.mySideBar-menu-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Footer Section */
+.mySideBar-footer {
+  padding: 1rem 0.75rem;
+  border-top: 2px solid #e9ecef;
+  background: #f8f9fa;
+}
+
+/* Logout Button */
+.mySideBar-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  background: linear-gradient(135deg, #fc5c7d 0%, #e74c3c 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+}
+
+.mySideBar-logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+.mySideBar-logout-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(231, 76, 60, 0.3);
+}
+
+.mySideBar-logout-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  width: 24px;
+  height: 24px;
+}
+
+.mySideBar-logout-text {
+  flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mySideBar-container {
+    width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mySideBar-container {
+    width: 85%;
+    max-width: 300px;
+  }
+
+  .mySideBar-header {
+    padding: 1.25rem 0.875rem;
+  }
+
+  .mySideBar-logo {
+    max-width: 140px;
+  }
+
+  .mySideBar-menu-item,
+  .mySideBar-logout-btn {
+    padding: 0.75rem 0.875rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation for menu items */
+@keyframes slideInLeft {
+  from {
+    opacity: 0.5;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mySideBar-open .mySideBar-menu-item {
+  animation: slideInLeft 0.3s ease forwards;
+}
+
+.mySideBar-open .mySideBar-menu-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.mySideBar-open .mySideBar-menu-item:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.mySideBar-open .mySideBar-menu-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.mySideBar-open .mySideBar-menu-item:nth-child(4) {
+  animation-delay: 0.25s;
+}
+
+.mySideBar-open .mySideBar-menu-item:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+.mySideBar-open .mySideBar-menu-item:nth-child(6) {
+  animation-delay: 0.35s;
+}

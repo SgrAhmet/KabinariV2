@@ -137,7 +137,7 @@ const DynamicForm = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col gap-2">
       {rows.map((row, index) => (
         <Row
           rows={rows}
@@ -167,6 +167,9 @@ const DynamicForm = () => {
           deleteRow={deleteRow}
         />
       ))}
+
+      <div className="flex gap-2 items-center justify-end p-2">
+
       <button
         type="button"
         className="bg-green-500 border border-green-800 text-white px-4 py-2 rounded hover:bg-green-600 hover:border-green-600 transition-all duration-300 cursor-pointer"
@@ -196,6 +199,10 @@ const DynamicForm = () => {
       >
         Excel
       </button>
+
+
+      </div>
+
     </div>
   );
 };

@@ -60,7 +60,7 @@ const Home = () => {
         Add New Data
       </button>
 
-      <button onClick={() => navigate("/login")} className="bg-blue-500 border border-blue-800 text-white px-4 py-2 rounded hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 cursor-pointer">Login</button>
+      <button onClick={() => navigate("/Giris")} className="bg-blue-500 border border-blue-800 text-white px-4 py-2 rounded hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 cursor-pointer">Login</button>
       <h1 className="text-3xl font-bold text-blue-500 underline">
         Tailwind Çalışıyor!
       </h1>

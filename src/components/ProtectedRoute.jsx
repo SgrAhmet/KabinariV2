@@ -6,7 +6,7 @@ function ProtectedRoute({ children }) {
   const [user, loading] = useAuthState(auth);
 
   if (loading) return <p>Yükleniyor...</p>;
-  if (!user) return <Navigate to="/login" />;
+  if (!user) return <Navigate to="/Giris" />;
 
   return children;  
 }

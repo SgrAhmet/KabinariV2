@@ -14,26 +14,33 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      alert("Giriş başarılı!");
-      navigate("/allprojects")
+      if (auth.currentUser.emailVerified) {
+        alert("Giriş başarılı!");
+        navigate("/allprojects");
+      } else {
+        alert("Lütfen e-postanızı doğrulayın!");
+      }
     } catch (error) {
       alert("Giriş başarısız: " + error.message);
     }
+
   };
   return (
     <>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} autoComplete="off">
         <input
           type="email"
           placeholder="E-posta"
           onChange={(e) => setEmail(e.target.value)}
           required
+          autoComplete="off"
         />
         <input
           type="password"
           placeholder="Şifre"
           onChange={(e) => setPassword(e.target.value)}
           required
+          autoComplete="current-password"
         />
         <button type="submit">Giriş Yap</button>
       </form>

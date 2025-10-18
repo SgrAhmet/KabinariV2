@@ -27,11 +27,11 @@ const Row = ({
   deleteRow,
 }) => {
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-1">
       <input
         placeholder="Kat"
         type="text"
-        className="border border-blue-800 rounded px-4 py-2 w-20"
+        className="border border-blue-800 rounded px-4 py-2 w-24"
         value={kat}
         onChange={(e) =>
           setRows(
@@ -44,7 +44,7 @@ const Row = ({
       <input
         placeholder="Tip"
         type="text"
-        className="border border-blue-800 rounded px-4 py-2 w-20"
+        className="border border-blue-800 rounded px-4 py-2 w-24"
         value={tip}
         onChange={(e) =>
           setRows(
@@ -57,7 +57,7 @@ const Row = ({
       <input
         placeholder="Mahal No"
         type="text"
-        className="border border-blue-800 rounded px-4 py-2 w-20"
+        className="border border-blue-800 rounded px-4 py-2 w-24 placeholder:text-[10px]"
         value={mahalNo}
         onChange={(e) =>
           setRows(
@@ -70,7 +70,7 @@ const Row = ({
       <input
         placeholder="Mahal"
         type="text"
-        className="border border-blue-800 rounded px-4 py-2 w-20"
+        className="border border-blue-800 rounded px-4 py-2 w-24"
         value={mahal}
         onChange={(e) =>
           setRows(
@@ -84,7 +84,7 @@ const Row = ({
       <input
         placeholder="En"
         type="text"
-        className="border border-blue-800 rounded px-4 py-2 w-20"
+        className="border border-blue-800 rounded px-4 py-2 w-24"
         value={en}
         onChange={(e) =>
           setRows(
@@ -98,7 +98,7 @@ const Row = ({
       <input
         placeholder="Boy"
         type="text"
-        className="border border-blue-800 rounded px-4 py-2 w-20"
+        className="border border-blue-800 rounded px-4 py-2 w-24"
         value={boy}
         onChange={(e) =>
           setRows(
@@ -112,7 +112,7 @@ const Row = ({
       <input
         placeholder="DK"
         type="text"
-        className="border border-blue-800 rounded px-4 py-2 w-20"
+        className="border border-blue-800 rounded px-4 py-2 w-24"
         value={dk}
         onChange={(e) =>
           setRows(
@@ -126,7 +126,7 @@ const Row = ({
       <select
         name="yon"
         id=""
-        className="border border-blue-800 rounded px-4 py-2 w-20"
+        className="border border-blue-800 rounded px-4 py-2 w-24"
         value={yon}
         onChange={(e) =>
           setRows(
@@ -144,7 +144,7 @@ const Row = ({
       <input
         placeholder="Kanat"
         type="text"
-        className="border border-blue-800 rounded px-4 py-2 w-20"
+        className="border border-blue-800 rounded px-4 py-2 w-24"
         value={kanat}
         onChange={(e) =>
           setRows(
@@ -157,7 +157,7 @@ const Row = ({
       <input
         placeholder="Kasa"
         type="text"
-        className="border border-blue-800 rounded px-4 py-2 w-20"
+        className="border border-blue-800 rounded px-4 py-2 w-24"
         value={kasa}
         onChange={(e) =>
           setRows(
@@ -171,7 +171,7 @@ const Row = ({
       <select
         name="barel"
         id=""
-        className="border border-blue-800 rounded px-4 py-2 w-20"
+        className="border border-blue-800 rounded px-4 py-2 w-24"
         value={barel}
         onChange={(e) =>
           setRows(
@@ -189,7 +189,7 @@ const Row = ({
       <input
         type="text"
         placeholder="Kilit"
-        className="border border-blue-800 rounded px-4 py-2 w-20"
+        className="border border-blue-800 rounded px-4 py-2 w-24"
         value={kilit}
         onChange={(e) =>
           setRows(
@@ -218,11 +218,10 @@ const Row = ({
         <option value="U">U</option>
       </select>
 
-
       <select
         name="kol"
         id=""
-        className="border border-blue-800 rounded px-4 py-2 w-20"
+        className="border border-blue-800 rounded px-4 py-2 w-24"
         value={kol}
         onChange={(e) =>
           setRows(
@@ -241,6 +240,7 @@ const Row = ({
         title="Tekmelik"
         type="checkbox"
         checked={tekmelik}
+        className="border border-blue-800 rounded px-4 py-2 w-6"
         onChange={(e) =>
           setRows(
             rows.map((row, i) =>
@@ -249,9 +249,10 @@ const Row = ({
           )
         }
       />
-  <input
+      <input
         title="Itmelik"
         type="checkbox"
+        className="border border-blue-800 rounded px-4 py-2 w-6"
         checked={itmelik}
         onChange={(e) =>
           setRows(
@@ -261,9 +262,10 @@ const Row = ({
           )
         }
       />
-  <input
+      <input
         title="Menfez"
         type="checkbox"
+        className="border border-blue-800 rounded px-4 py-2 w-6"
         checked={menfez}
         onChange={(e) =>
           setRows(
@@ -274,9 +276,10 @@ const Row = ({
         }
       />
 
-<input
+      <input
         title="Hidrolik"
         type="checkbox"
+        className="border border-blue-800 rounded px-4 py-2 w-6"
         checked={hidrolik}
         onChange={(e) =>
           setRows(
@@ -287,10 +290,10 @@ const Row = ({
         }
       />
 
-
-<input
+      <input
         title="Lumboz"
         type="checkbox"
+        className="border border-blue-800 rounded px-4 py-2 w-6"
         checked={lumboz}
         onChange={(e) =>
           setRows(
@@ -301,9 +304,10 @@ const Row = ({
         }
       />
 
-<input
+      <input
         title="Yangına D"
         type="checkbox"
+        className="border border-blue-800 rounded px-4 py-2 w-6"
         checked={yangınaD}
         onChange={(e) =>
           setRows(
