@@ -8,7 +8,6 @@ import { getAuth } from "firebase/auth";
 
 const Home = () => {
   const navigate = useNavigate();
-
   const newData = {
     name: "Ahmet",
     age: 22,
