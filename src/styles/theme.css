@@ -1,0 +1,19 @@
+/* src/styles/theme.css */
+:root {
+    --color-bg: #ffffff;
+    --color-text: #1a1a1a;
+    --color-primary: #ff7f11;
+    --color-secondary: #4f46e5;
+    --color-accent: #22d3ee;
+    --color-red: #e72f2f;
+  }
+  
+  .dark {
+    --color-bg: #121212;
+    --color-text: #eaeaea;
+    --color-primary: #ffa726;
+    --color-secondary: #818cf8;
+    --color-accent: #67e8f9;
+    --color-red: #ffffff;
+  }
+  

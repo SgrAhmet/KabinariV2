@@ -8,14 +8,14 @@ const AllProjects = () => {
   // const user = auth.currentUser;
   // console.log("user: ", user);
 
-  //  SideBar===============================
+  // ==============SideBar=============
   const [open, setOpen] = React.useState(false);
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
-  //  SideBar===============================
+  // ==============SideBar=============
   return (
-    <div className="bg-primary h-screen">
+    <div className="bg-secondary h-screen">
       <button
         onClick={toggleDrawer(true)}
         className="bg-blue-500 border border-blue-800 text-white px-4 py-2 rounded hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 cursor-pointer"
@@ -29,6 +29,9 @@ const AllProjects = () => {
       <h1 className="text-3xl font-bold text-red-500 hover:text-blue-500 cursor-pointer transition-all duration-300">
         AllProjects
       </h1>
+
+      <button onClick={() => document.body.classList.toggle("dark")}>Toggle Dark Mode</button>
+      <button onClick={() => console.log(document.body.classList)}>Console</button>
       <DynamicForm />
 
     

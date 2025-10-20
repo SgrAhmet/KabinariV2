@@ -13,29 +13,32 @@ const DynamicForm = () => {
   const auth = getAuth();
 const navigate = useNavigate();
 
+const emptyData ={
+    kat: "",
+    tip: "",
+    mahalNo: "",
+    mahal: "",
+    en: "",
+    boy: "",
+    dk: "",
+    kanat: "",
+    kasa: "",
+    yon: "",
+    barel: "",
+    kilit: "",
+    cumba: "",
+    kol: "",
+    tekmelik: false,
+    itmelik: false,
+    menfez: false,
+    hidrolik: false,
+    lumboz: false,
+    yangınaD: false,
+  
+}
+
   const [rows, setRows] = useState([
-    {
-      kat: "",
-      tip: "",
-      mahalNo: "",
-      mahal: "",
-      en: "",
-      boy: "",
-      dk: "",
-      kanat: "",
-      kasa: "",
-      yon: "",
-      barel: "",
-      kilit: "",
-      cumba: "",
-      kol: "",
-      tekmelik: false,
-      itmelik: false,
-      menfez: false,
-      hidrolik: false,
-      lumboz: false,
-      yangınaD: false,
-    },
+    emptyData,
   ]);
 
   useEffect(() => {
@@ -48,28 +51,7 @@ const navigate = useNavigate();
   const addRow = () => {
     setRows([
       ...rows,
-      {
-        kat: "",
-        tip: "",
-        mahalNo: "",
-        mahal: "",
-        en: "",
-        boy: "",
-        dk: "",
-        kanat: "",
-        kasa: "",
-        yon: "",
-        barel: "",
-        kilit: "",
-        cumba: "",
-        kol: "",
-        tekmelik: false,
-        itmelik: false,
-        menfez: false,
-        hidrolik: false,
-        lumboz: false,
-        yangınaD: false,
-      },
+      emptyData,
     ]);
   };
   const deleteRow = (index) => {
@@ -106,28 +88,7 @@ const navigate = useNavigate();
     } else {
       setRows([
         ...rows,
-        {
-          kat: "",
-          tip: "",
-          mahalNo: "",
-          mahal: "",
-          en: "",
-          boy: "",
-          dk: "",
-          kanat: "",
-          kasa: "",
-          yon: "",
-          barel: "",
-          kilit: "",
-          cumba: "",
-          kol: "",
-          tekmelik: false,
-          itmelik: false,
-          menfez: false,
-          hidrolik: false,
-          lumboz: false,
-          yangınaD: false,
-        },
+        emptyData,
       ]);
     }
   };

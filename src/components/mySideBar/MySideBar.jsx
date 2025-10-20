@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import {
@@ -8,12 +8,28 @@ import {
   Logout,
   Add,
   Close,
+  DarkMode,
+  LightMode,
 } from "@mui/icons-material";
 import "./MySideBar.css";
-
+// import  from '@mui/icons-material/NightlightRound';
 const MySideBar = ({ open, toggleDrawer }) => {
   const navigate = useNavigate();
   const auth = getAuth();
+
+  const [darkMode, setDarkMode] = useState(false);
+  
+
+  useEffect(() => {
+    
+    if(darkMode){
+      document.body.classList.add("dark");
+    }else{
+      document.body.classList.remove("dark");
+    }
+  
+  }, [darkMode])
+  
 
   const handleNavigation = (route) => {
     navigate(route);
@@ -25,9 +41,19 @@ const MySideBar = ({ open, toggleDrawer }) => {
     toggleDrawer(false)();
   };
 
+  const handleThemeChange = () => {
+    setDarkMode(!darkMode);
+
+    console.log(document.body.classList.contains("dark"));
+  };
+
   const sideBarItems = [
     { text: "Yeni Proje", icon: <CreateNewFolder />, route: "/Yeni-Proje" },
-    { text: "Tüm Projeler", icon: <AutoAwesomeMotion />, route: "/Tüm-Projeler" },
+    {
+      text: "Tüm Projeler",
+      icon: <AutoAwesomeMotion />,
+      route: "/Tüm-Projeler",
+    },
     { text: "Müşteriler", icon: <People />, route: "/Müşteriler" },
     { text: "Kullanıcı Ekle", icon: <Add />, route: "/Kayit" },
   ];
@@ -36,7 +62,9 @@ const MySideBar = ({ open, toggleDrawer }) => {
     <>
       {/* Overlay - Dışarıya tıklandığında sidebar kapanır */}
       <div
-        className={`mySideBar-overlay ${open ? "mySideBar-overlay-active" : ""}`}
+        className={`mySideBar-overlay ${
+          open ? "mySideBar-overlay-active" : ""
+        }`}
         onClick={toggleDrawer(false)}
       />
 
@@ -81,6 +109,16 @@ const MySideBar = ({ open, toggleDrawer }) => {
                 <span className="mySideBar-menu-text">{item.text}</span>
               </button>
             ))}
+            <button className="mySideBar-menu-item" onClick={handleThemeChange}>
+              <span className="mySideBar-menu-icon">
+                {document.body.classList.contains("dark") ? (
+                  <LightMode />
+                ) : (
+                  <DarkMode />
+                )}
+              </span>
+              <span className="mySideBar-menu-text">Tema Değiştir</span>
+            </button>
           </nav>
         </div>
 
